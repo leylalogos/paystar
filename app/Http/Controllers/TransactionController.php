@@ -30,6 +30,9 @@ class TransactionController extends Controller
     }
     public function showTransactionList(BankAccount $bankAccount)
     {
+        if (Auth::id() != $bankAccount->user_id) {
+            return response()->json(['massage' => 'this is not your account'], 403);
+        }
         return $bankAccount->transactions;
     }
 

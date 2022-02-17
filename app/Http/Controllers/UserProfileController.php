@@ -22,6 +22,6 @@ class UserProfileController extends Controller
     }
     public function showBalance()
     {
-        return ["balance"=>Auth::user()->balance];
+        return ["balance" => Auth::user()->balance];
     }
 }
