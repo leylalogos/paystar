@@ -19,7 +19,8 @@ class UserSeeder extends Seeder
             'first_name' => 'Ali',
             'last_name' => 'babayi',
             'email' => 'ali@example.com',
-            'password' => bcrypt('123456')
+            'password' => bcrypt('123456'),
+            'balance' => 2000
         ]);
     }
 }

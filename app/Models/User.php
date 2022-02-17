@@ -22,6 +22,7 @@ class User extends Authenticatable
         'email',
         'password',
         'last_name',
+        'balance'
     ];
 
     public function bankAccounts()

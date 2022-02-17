@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\BankAccount;
+use Illuminate\Support\Facades\Auth;
 
 class UserProfileController extends Controller
 {
@@ -18,5 +19,9 @@ class UserProfileController extends Controller
     public function getBankInformation()
     {
         return auth()->user()->bankAccounts;
+    }
+    public function showBalance()
+    {
+        return ["balance"=>Auth::user()->balance];
     }
 }

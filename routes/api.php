@@ -20,3 +20,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('login', 'AuthenticationController@login');
 Route::middleware('auth:sanctum')->post('/bankinformation', 'UserProfileController@setBankInformation');
 Route::middleware('auth:sanctum')->get('/bankinformation', 'UserProfileController@getBankInformation');
+Route::middleware('auth:sanctum')->get('/balance','UserProfileController@showBalance');
+Route::middleware('auth:sanctum')->post('/withdraw','TransactionController@withdraw');
+Route::middleware('auth:sanctum')->get('/bankAccount/{bankAccount}/transactions','TransactionController@showTransactionList');
