@@ -18,3 +18,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::post('login', 'AuthenticationController@login');
+Route::middleware('auth:sanctum')->post('/bankinformation', 'UserProfileController@setBankInformation');
+Route::middleware('auth:sanctum')->get('/bankinformation', 'UserProfileController@getBankInformation');
